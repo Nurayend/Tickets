@@ -1,19 +1,23 @@
 from django.shortcuts import render, redirect
-from .forms import createUserForm, searchForm
+from .forms import createUserForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
+from .filters import ScheduleFilter
+from .models import Schedule
 
 # Create your views here.
 @login_required(login_url='login')
 def index(request):
-    return render(request, 'api/index.html')
+    schedules = Schedule.objects.all()
+    myFilter = ScheduleFilter(request.GET, queryset=schedules)
+    schedules = myFilter.qs
+    context = {'schedules': schedules, 'myFilter': myFilter}
+    return render(request, 'api/index.html', context)
 
 @login_required(login_url='login')
 def about(request):
     return render(request, 'api/about.html')
-
 
 def registerPage(request):
     if request.user.is_authenticated:

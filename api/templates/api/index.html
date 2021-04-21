@@ -6,4 +6,35 @@ Train schedule
 
 {% block content %}
 <h1>Train schedule</h1>
+<br>
+<form class="row gy-2 gx-3 align-items-center" method="get">
+  {{myFilter.form}}
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary">Search</button>
+  </div>
+</form>
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Day</th>
+      <th scope="col">From</th>
+      <th scope="col">To</th>
+      <th scope="col">Name of Train</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for schedule in schedules %}
+    <tr>
+      <th scope="row">{{schedule.date}}</th>
+      <td>{{schedule.day}}</td>
+      <td>{{schedule.train_from}}</td>
+      <td>{{schedule.train_to}}</td>
+      <td>{{schedule.name}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
 {% endblock %}
