@@ -1,36 +1,56 @@
 {% extends 'api/base.html' %}
 
 {% block title %}
-About us
+Home
 {% endblock %}
 
 {% block content %}
 <h1>About us</h1> <br>
-<div class="card">
-  <div class="card-body">
-    <strong>Client support.</strong> We are ready to advise you on all issues related to the purchase of flight tickets and other services –
+
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Tickets</h1>
+  <p class="w3-xlarge">Enjoy your travel. Get schedule of trains in our website</p>
+  <a href="{% url 'home' %}" class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</a>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>Client support</h1>
+      <h5 class="w3-padding-32">We are ready to advise you on all issues related to the purchase of flight tickets and other services –
+          booking, payment, making changes.</h5>
+
+      <p class="w3-text-grey">We are ready to advise you on all issues related to the purchase of flight tickets and other services –
           booking, payment, making changes. Our Customer Care Service operators will answer your questions in Russian, Kazakh, and English.
-         Use fast and easy options to search for and buy flight tickets on the Tickets.kz website or through Android and iOS mobile apps.
+         Use fast and easy options to search for and buy flight tickets on the Tickets.kz website or through Android and iOS mobile apps.</p>
+    </div>
+
+    <div class="w3-third w3-center">
+      <i class="fa fa-coffee w3-padding-64 w3-text-red"></i>
+    </div>
   </div>
-</div><br>
-<div class="card">
-  <div class="card-body">
-    <strong>Cheap flight tickets</strong>
-          Book cheap flights on Tickets.kz. There is only a clear pricing with no hidden charges and fees.
-          We cooperate with more than 750 airlines around the world including low-cost airlines. The Tickets.kz
-          search system processes your queries quickly and displays all the available flights. You can choose fast
-          or cheap flight option and make a purchase in a matter of minutes.
-  </div>
-</div> <br>
-<div class="card">
-  <div class="card-body">
-    <strong>Online payment safety.</strong>
-          We are trusted by more than 2 000 000 customers around the
-          world. The Tickets.kz website is reliably protected and
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <i class="fa fa-anchor w3-padding-64 w3-text-red w3-margin-right"></i>
+    </div>
+
+    <div class="w3-twothird">
+      <h1>Online payment safety.</h1>
+      <h5 class="w3-padding-32">We are trusted by more than 2 000 000 customers around the
+          world.</h5>
+
+      <p class="w3-text-grey"> The Tickets.kz website is reliably protected and
           has an international PCI DSS security certificate. The transmission of
           payment details is carried out in the encrypted form, and it is not stored on
           the server. Our site fully meets the safety standards of Visa and MasterCard <a href="#">(PCI compliancy)</a>.
-          Be sure of the safety of your personal information!
+          Be sure of the safety of your personal information!</p>
+    </div>
   </div>
 </div>
 {% endblock %}
